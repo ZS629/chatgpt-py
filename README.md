@@ -54,33 +54,41 @@ self.display_message(..., self.entry_var)
 为什么要这样改呢（ChatGPT给出的解释是这样的）：
 
 ```markdown
-    self.entry_var 是 ChatBotApp 类的一个属性，如果您将 self.entry_var.set('') 放在 display_message() 函数中。
-    由于 self 指代的是 ChatBotApp 类的实例，display_message() 函数将无法识别 self.entry_var。
+self.entry_var 是 ChatBotApp 类的一个属性，如果您将 self.entry_var.set('') 放在 display_message() 函数中。
+由于 self 指代的是 ChatBotApp 类的实例，display_message() 函数将无法识别 self.entry_var。
 ```
 
 ③在display_message()函数中使用GUI清空输入框，
-但这需要将所有self.display_message(...)函数替换为self.after_idle(self.display_message, ...)
-这样可以确保display_message()函数始终在主线程上运行，从而避免了多线程问题。
-即使在 display_message() 函数内部清空输入框，也不会产生问题。这种方法比较繁琐
+但这需要将所有self.display_message(...)函数替换为
+
+```python
+self.after_idle(self.display_message, ...)
+```
+
+这样做可以确保display_message()函数始终在主线程上运行，从而避免了多线程问题。
+此时，即使在 display_message() 函数内部清空输入框，也不会产生问题。但这种方法比较繁琐
 
 总之，在实际应用中，选择哪种方法取决于你的具体需求和编程风格。
 如果你希望保持代码简洁并专注于解决当前问题，将清空输入框的操作放在 send_message() 函数中可能是更好的选择（这里为了简洁我就采用第一种方法了）。
-但是，如果你希望程序更具通用性，可以在多线程环境中正常工作，并确保GUI操作始终在主线程上执行，那么使用 self.after_idle(self.display_message, ...) 的方法可能更适合你。
+但是，如果你希望程序更具通用性，可以在多线程环境中正常工作，并确保GUI操作始终在主线程上执行，那么使用 
+
+```python
+self.after_idle(self.display_message, ...) 的方法可能更适合你。
+```
 
 二、处理引发异常的真正原因（是由于秘钥为空还是秘钥不正确）的问题
 
-吃个饭再写QWQ
-...
+吃个饭再写QWQ，算了，还是不写了，代码里有(懒QWQ)
 
 ## 5. 更新日志和贡献者
 
-图形窗口版 Ver1.0:
+图形窗口版 Ver1.0(2023/4/1 14:36)
 如你所见
 
 ## 6. 许可证和版权声明
 
-仅供交流学习，请勿用于非法用途
-此项目仅提供一个参考，不是什么卖号、卖秘钥的
+本项目遵循Apache2.0协议开源，仅供交流学习，请勿用于非法用途
+此项目仅提供给开发者一个参考，不是什么卖号、卖秘钥、卖产品的
 
 ## 7. 联系信息
 
