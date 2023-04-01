@@ -73,8 +73,11 @@ self.after_idle(self.display_message, ...)
 但是，如果你希望程序更具通用性，可以在多线程环境中正常工作，并确保GUI操作始终在主线程上执行，那么使用 
 
 ```python
-self.after_idle(self.display_message, ...) 的方法可能更适合你。
+self.after_idle(self.display_message, ...) 
 ```
+
+的方法可能更适合你。
+
 
 二、处理引发异常的真正原因（是由于秘钥为空还是秘钥不正确）的问题
 
