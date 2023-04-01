@@ -34,11 +34,11 @@ pip install openai
 
 在处理一些问题上，我询问了ChatGPT（懒得百度QWQ），以下是一个小总结：
 
-### 一、处理多线程的问题
+一、处理多线程的问题
 
-#### ①直接在send_message()函数中使用GUI清空输入框，简单明了QWQ
+①直接在send_message()函数中使用GUI清空输入框，简单明了QWQ
 
-#### ②通过将 self.entry_var 作为一个参数传递给 display_message() 函数，然后在该函数中清空输入框。
+②通过将 self.entry_var 作为一个参数传递给 display_message() 函数，然后在该函数中清空输入框。
 需要在每次调用 display_message() 函数时传递self.entry_var作为参数。如：
 
 ```python
@@ -58,7 +58,7 @@ self.display_message(..., self.entry_var)
     由于 self 指代的是 ChatBotApp 类的实例，display_message() 函数将无法识别 self.entry_var。
 ```
 
-#### ③在display_message()函数中使用GUI清空输入框，
+③在display_message()函数中使用GUI清空输入框，
 但这需要将所有self.display_message(...)函数替换为self.after_idle(self.display_message, ...)
 这样可以确保display_message()函数始终在主线程上运行，从而避免了多线程问题。
 即使在 display_message() 函数内部清空输入框，也不会产生问题。这种方法比较繁琐
@@ -67,7 +67,7 @@ self.display_message(..., self.entry_var)
 如果你希望保持代码简洁并专注于解决当前问题，将清空输入框的操作放在 send_message() 函数中可能是更好的选择（这里为了简洁我就采用第一种方法了）。
 但是，如果你希望程序更具通用性，可以在多线程环境中正常工作，并确保GUI操作始终在主线程上执行，那么使用 self.after_idle(self.display_message, ...) 的方法可能更适合你。
 
-### 二、处理引发异常的真正原因（是由于秘钥为空还是秘钥不正确）的问题
+二、处理引发异常的真正原因（是由于秘钥为空还是秘钥不正确）的问题
 
 吃个饭再写QWQ
 ...
