@@ -17,6 +17,7 @@ pip install openai
 ## 3. 使用说明
 
 安装好所需的模块（openai库）直接运行即可
+
 程序相关截图
 
 ![运行](https://github.com/ZS629/chatgpt-py/blob/master/img/run.jpg)
