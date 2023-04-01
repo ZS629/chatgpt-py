@@ -18,6 +18,13 @@
 ## 3. 使用说明
 
 安装好所需的模块（openai库）直接运行即可
+程序相关截图
+
+[运行](https://github.com/ZS629/chatgpt-py/tree/master/img/run.jpg)
+
+[指令关闭](https://github.com/ZS629/chatgpt-py/tree/master/img/closerw.png)
+
+[用户关闭窗口](https://github.com/ZS629/chatgpt-py/tree/master/img/close.png)
 
 ## 4. 已知问题和解决方案
 
@@ -75,39 +82,3 @@ QQ：536957230
 QQ交流群（开发者交流群）：782164105
 
 QQ交流群（交流学习，后面放个机器人玩QWQ）：526308313
-=======
-# chatgpt-py
-
-# 项目名称
-Python版的ChatGPT
-
-项目描述
-
-## 功能
-
-- 用户可选择输入自己的秘钥
-- 用户可以跟ChatGPT交流
-- 用户可以通过输入"停止"来终止程序
-- ...
-
-## 使用说明
-
-先安装openai库
-
-```python 
-pip install openai
-```
-
-## 示例
-
-代码示例
-
-## 贡献者
-
-列出贡献者的名字和联系方式（可选）。
-
-## 版权声明
-
-本项目遵循 XXX 协议，禁止用于非法用途。
-
->>>>>>> 6bacb31 (Create README.md)
