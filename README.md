@@ -1,4 +1,6 @@
-# 基于Python的ChatGPT聊天室（图形界面）
+# 基于Python的ChatGPT聊天室
+
+图形界面版
 
 ## 1. 项目简介
 
