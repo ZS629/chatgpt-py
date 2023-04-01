@@ -11,7 +11,7 @@
 安装所需的库（这里只需要安装openai库即可）。
 
 ```shell
-    pip install openai
+pip install openai
 ```
 
 ## 3. 使用说明
