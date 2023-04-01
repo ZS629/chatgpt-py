@@ -32,9 +32,9 @@ pip install openai
 
 ### 一、处理多线程的问题
 
-#### 1. 直接在send_message()函数中使用GUI清空输入框，简单明了QWQ
+#### ①直接在send_message()函数中使用GUI清空输入框，简单明了QWQ
 
-#### 2. 通过将 self.entry_var 作为一个参数传递给 display_message() 函数，然后在该函数中清空输入框。
+#### ②通过将 self.entry_var 作为一个参数传递给 display_message() 函数，然后在该函数中清空输入框。
 需要在每次调用 display_message() 函数时传递self.entry_var作为参数。如：
 
 ```python
@@ -54,7 +54,7 @@ self.display_message(..., self.entry_var)
     由于 self 指代的是 ChatBotApp 类的实例，display_message() 函数将无法识别 self.entry_var。
 ```
 
-#### 3. 在display_message()函数中使用GUI清空输入框，
+#### ③在display_message()函数中使用GUI清空输入框，
 但这需要将所有self.display_message(...)函数替换为self.after_idle(self.display_message, ...)
 这样可以确保display_message()函数始终在主线程上运行，从而避免了多线程问题。
 即使在 display_message() 函数内部清空输入框，也不会产生问题。这种方法比较繁琐
