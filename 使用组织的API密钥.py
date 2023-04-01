@@ -223,7 +223,7 @@ while True:
         print(f"发生其他错误：{e}") 
 '''
 
-# 以下代码作废（ChatGPT生成的，有能力的也可以改改Bug跑起来）
+# 以下代码作废（有能力的也可以改改Bug跑起来）
 '''
 import openai
 
@@ -258,7 +258,7 @@ except Exception as e:
 
 '''
 
-# 以下代码作废（ChatGPT生成的然后我放弃修bug的部分，有能力的也可以改改Bug跑起来）
+# 以下代码作废（我放弃修bug的部分，有能力的也可以改改Bug跑起来）
 '''
 import openai
 
